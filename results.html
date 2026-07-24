@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>게임 결과 | Mars Terraforming Commons</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='22' fill='%23d96f3c'/%3E%3Ccircle cx='24' cy='24' r='5' fill='%235f241b' opacity='.8'/%3E%3Ccircle cx='42' cy='38' r='7' fill='%239d3e22' opacity='.75'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./css/styles.css?v=15" />
+  </head>
+  <body class="results-page">
+    <header class="top-bar">
+      <a class="brand" href="./index.html" aria-label="공용 페이지로 이동">
+        <span class="brand-mark"></span>
+        <span>게임 결과</span>
+      </a>
+      <div class="top-actions">
+        <a class="ghost-link admin-entry-link" href="./admin.html">관리자</a>
+        <a class="ghost-link" href="./index.html">공용 페이지</a>
+      </div>
+    </header>
+
+    <main class="results-shell">
+      <section class="results-hero">
+        <div>
+          <div class="section-kicker">Final Report</div>
+          <h1>테라포밍 결과</h1>
+        </div>
+        <div class="results-summary" id="resultsSummary"></div>
+      </section>
+
+      <section class="results-panel">
+        <div class="panel-heading">
+          <div>
+            <div class="section-kicker">Contribution Ranking</div>
+            <h2>기업 기여도 순위</h2>
+          </div>
+        </div>
+        <div class="final-ranking" id="finalRanking"></div>
+      </section>
+
+      <section class="results-grid">
+        <section class="results-panel">
+          <div class="panel-heading">
+            <div>
+              <div class="section-kicker">Effective Projects</div>
+              <h2>효과적이였던 프로젝트</h2>
+            </div>
+          </div>
+          <div class="result-project-list" id="effectiveProjects"></div>
+        </section>
+
+        <section class="results-panel">
+          <div class="panel-heading">
+            <div>
+              <div class="section-kicker">Failed Projects</div>
+              <h2>실패한 프로젝트</h2>
+            </div>
+          </div>
+          <div class="result-project-list" id="failedProjects"></div>
+        </section>
+      </section>
+
+      <section class="results-panel">
+        <div class="panel-heading">
+          <div>
+            <div class="section-kicker">Politics Timeline</div>
+            <h2>정치 상황 변동</h2>
+          </div>
+        </div>
+        <div class="politics-result-summary" id="politicsResultSummary"></div>
+        <div class="politics-chart" id="politicsChart"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/resultsPage.js?v=3"></script>
+  </body>
+</html>
