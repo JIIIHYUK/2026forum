@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>관리자란 | Mars Terraforming Commons</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='22' fill='%23d96f3c'/%3E%3Ccircle cx='24' cy='24' r='5' fill='%235f241b' opacity='.8'/%3E%3Ccircle cx='42' cy='38' r='7' fill='%239d3e22' opacity='.75'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./css/styles.css?v=19" />
+  </head>
+  <body class="admin-page">
+    <header class="top-bar">
+      <a class="brand" href="./index.html" aria-label="공용 페이지로 이동">
+        <span class="brand-mark"></span>
+        <span>관리자란</span>
+      </a>
+      <div class="top-actions">
+        <a class="ghost-link" href="./index.html">페이지로 나가기</a>
+      </div>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-login-panel" id="loginPanel">
+        <div class="section-kicker">Admin</div>
+        <h1>관리자 진입</h1>
+        <form class="admin-login-form" id="adminLoginForm">
+          <label>
+            <span>비밀번호</span>
+            <input id="adminPassword" type="password" autocomplete="current-password" placeholder="비밀번호 입력" required />
+          </label>
+          <button class="primary-button" type="submit">진입</button>
+        </form>
+        <p class="admin-message" id="loginMessage" aria-live="polite"></p>
+      </section>
+
+      <section class="admin-dashboard is-hidden" id="adminDashboard">
+        <div class="admin-dashboard-heading">
+          <div>
+            <div class="section-kicker">Company Work Log</div>
+            <h1>각 기업이 한 일</h1>
+          </div>
+          <div class="admin-top-actions">
+            <button class="ghost-button" id="toggleTimeButton" type="button">시간정지</button>
+            <button class="primary-button" id="skipGrantButton" type="button">30분 스킵</button>
+            <button class="ghost-button danger-button" id="endGameButton" type="button">게임 종료</button>
+            <a class="ghost-link" href="./index.html">페이지로 나가기</a>
+          </div>
+        </div>
+        <p class="admin-message" id="adminActionMessage" aria-live="polite"></p>
+
+        <div class="admin-summary" id="adminSummary"></div>
+
+        <section class="admin-budget-panel">
+          <div>
+            <div class="section-kicker">Budget Grant</div>
+            <h2>기업 예산 지급</h2>
+            <p>선택한 기업에 관리자 예산을 지급합니다. 지급 시 프로젝트 추가 가능 횟수도 초기화됩니다.</p>
+          </div>
+          <form class="admin-budget-form" id="adminBudgetForm">
+            <label>
+              <span>기업</span>
+              <select id="adminBudgetCompany" required></select>
+            </label>
+            <label>
+              <span>지급액</span>
+              <input id="adminBudgetAmount" type="number" min="1" step="1" placeholder="억 단위" required />
+            </label>
+            <button class="primary-button" type="submit">지급</button>
+          </form>
+        </section>
+
+        <div class="admin-company-list" id="adminCompanyList"></div>
+
+        <section class="admin-confirm admin-delete-confirm is-hidden" id="deleteConfirmPanel">
+          <p id="deleteConfirmMessage">정말 삭제할까요?</p>
+          <div class="decision-actions">
+            <button class="ghost-button" id="cancelDeleteButton" type="button">취소</button>
+            <button class="primary-button danger-primary" id="confirmDeleteButton" type="button">네, 삭제</button>
+          </div>
+        </section>
+
+        <section class="admin-reset-panel">
+          <div>
+            <div class="section-kicker">Reset</div>
+            <h2>모든 일 초기화</h2>
+            <p>모든 기업의 프로젝트, 기여도, 획득 예산 기록을 처음 상태로 되돌립니다.</p>
+          </div>
+          <button class="ghost-button danger-button" id="requestResetButton" type="button">초기화</button>
+          <div class="admin-confirm is-hidden" id="resetConfirmPanel">
+            <p>정말 모든 기록을 지울까요?</p>
+            <div class="decision-actions">
+              <button class="ghost-button" id="cancelResetButton" type="button">취소</button>
+              <button class="primary-button danger-primary" id="confirmResetButton" type="button">네, 지우기</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./js/adminPage.js?v=36"></script>
+  </body>
+</html>
